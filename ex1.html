@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>ex 1</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $().ready(function(){
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            $("#color").keyup(function(){
+                    context.shadowColor = $("#color").val();
+                    context.clearRect(0, 0, canvas.height, canvas.width);
+                    context.strokeRect(100, 100, 200, 200);
+                    context.fillRect(100, 100, 200, 200);
+                });
+                $("#blur").keyup(function(){
+                    context.shadowBlur = $("#blur").val();
+                    context.clearRect(0, 0, canvas.height, canvas.width);
+                    context.strokeRect(100, 100, 200, 200);
+                    context.fillRect(100, 100, 200, 200);
+                });
+                $("#xo").keyup(function(){
+                    context.shadowOffsetX = $("#xo").val();
+                    context.clearRect(0, 0, canvas.height, canvas.width);
+                    context.strokeRect(100, 100, 200, 200);
+                    context.fillRect(100, 100, 200, 200);
+                });
+                $("#yo").keyup(function(){
+                    context.shadowOffsetY = $("#yo").val();
+                    context.clearRect(0, 0, canvas.height, canvas.width);
+                    context.strokeRect(100, 100, 200, 200);
+                    context.fillRect(100, 100, 200, 200);
+                });
+            
+            context.strokeStyle = "#7732a8";
+            context.lineWidth = 5;
+            context.strokeRect(100, 100, 200, 200);
+            context.fillStyle = "#9ea832";
+            context.shadowColor = "#3236a8";
+            context.shadowBlur = 7;
+            context.shadowOffsetX = 25;
+            context.shadowOffsetY = 25;
+            context.fillRect(100, 100, 200, 200);
+        });
+        </script>
+	</head>
+	<body>
+	</body>
+    <canvas height="500" width="600" style="background-color: antiquewhite" id="canvas"></canvas>
+    <input type="text" id="color" placeholder="color" />
+    <input type="text" id="blur" placeholder="blur" />
+    <input type="text" id="xo" placeholder="X offset" />
+    <input type="text" id="yo" placeholder="Y offset" />
+</html>

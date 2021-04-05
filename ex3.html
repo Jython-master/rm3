@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>ex3</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $().ready(function(){
+            var canvas = document.getElementById("canvas");;
+            var context = canvas.getContext("2d");
+            context.strokeStyle = "#e600ff";
+            context.fillStyle = "#1500ff";
+            context.lineWidth = 4;
+            context.beginPath();
+            context.moveTo(25, 100);
+            context.lineTo(25, 25);
+            context.lineTo(125, 25);
+            context.closePath();
+            context.stroke();
+            context.fill();
+            context.strokeStyle = "#0026ff";
+            context.lineWidth = 5;
+            context.fillStyle = "#00ff33";
+            context.strokeRect(100, 100, 50, 50);
+            context.fillRect(100, 100, 50, 50);
+            context.strokeStyle = "#f2ff00";
+            context.fillStyle = "#e35700";
+            context.lineWidth = 4;
+            context.beginPath();
+            context.moveTo(400, 400);
+            context.lineTo(300, 417);
+            context.lineTo(352, 367);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.strokeStyle = "#00ffa2";
+            context.lineWidth = 8;
+            context.fillStyle = "#3747ad";
+            context.strokeRect(175, 100, 75, 150);
+            context.fillRect(175, 100, 75, 150);
+            context.lineWidth = 5;
+            context.beginPath();
+            context.strokeStyle = "#ffa600";
+            context.fillStyle = "#f200ff";
+            context.moveTo(20, 375);
+            context.lineTo(20, 328);
+            context.lineTo(80, 328);
+            context.lineTo(80, 375);
+            context.lineTo(50, 420);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.beginPath();
+            context.strokeStyle = "#2434c7";
+            context.lineWidth = 3;
+            context.fillStyle = "#917716";
+            context.arc(400, 200, 40, 0, Math.PI * 2, true);
+            context.fill();
+            context.stroke();
+        });
+        </script>
+	</head>
+	<body>
+	</body>
+    <canvas height="500" width="600" style="background-color: antiquewhite" id="canvas"></canvas>
+</html>

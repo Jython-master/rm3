@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>ex4</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        $().ready(function(){
+            var canvas = document.getElementById("canvas");;
+            var context = canvas.getContext("2d");
+            context.lineWidth = 5;
+            context.strokeStyle = "#00bfff";
+            context.fillStyle = "#eaff00";
+            context.fillRect(100, 130, 350, 325);
+            context.strokeRect(100,130, 350, 325);
+            context.strokeStyle = "#542f13";
+            context.fillStyle =  "#ff6e00";
+            context.beginPath();
+            context.moveTo(99, 131);
+            context.lineTo(275, 15);
+            context.lineTo(450, 130);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.lineWidth = 5;
+            context.strokeStyle = "#753402";
+            context.fillStyle = "#0073ff";
+            context.strokeRect(150, 250, 75, 75);
+            context.fillRect(150, 250, 75, 75);
+            context.beginPath();
+            context.moveTo(186, 250);
+            context.lineTo(186, 325);
+            context.stroke();
+            context.beginPath();
+            context.moveTo(150, 290);
+            context.lineTo(225, 290);
+            context.stroke();
+            context.lineWidth = 3;
+            context.strokeStyle = "#4d2100";
+            context.fillStyle = "#ab4a00";
+            context.strokeRect(300, 300, 80, 150);
+            context.fillRect(300,300,80,150);
+            context.strokeStyle = "#915424";
+            context.fillStyle = "#ffee00";
+            context.beginPath();
+            context.arc(374,375, 5, 0, Math.PI * 2, false);
+            context.stroke();
+            context.fill();
+            
+        });
+        </script>
+	</head>
+	<body>
+	</body>
+    <canvas height="500" width="600" style="background-color: antiquewhite" id="canvas"></canvas>
+</html>
