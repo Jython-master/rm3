@@ -7,11 +7,27 @@
         <script>
         $().ready(function(){
             var canvas = document.getElementById("canvas");;
-            var context = canvas.getContext("2d");
+            var context = canvas.getContext("webgl"); //chamando o contexto WebGL, aqui quando queremos fazer um desenho em 2d usamos 2D, quando queremos desenhar em 3d, precisamos chamar o WebGL
+            if(context !== null){//verificando se o navegador pode rodar WebGL
+            //aqui definimos para a canvas ter cor branca, e colocamos esse comando para rodar, deixando assim, o canvas branco
+                context.clearColor(1,1,1,1);
+                //agora desenharemos de fato
+                context.clear(context.COLOR_BUFFER_BIT);
+                context.viewport(0,0, context.drawingBudfferWidth, context.drawingBufferHeight); // de acordo com https://www.slideshare.net/herbetferreira/viewport-opengl
+                //O viewport e a area retangular da janela grafica onde e desenhada a imagem final produzida. Os primeiros valores sao o X e o Y originais, seguidos da width e do height do desenho, nesse caso width e height total do canvas
+                $("#switch").click(function(){
+                    //agora vamos limpar a cor para uma cor aleatoria
+                    context.clearColor(Math.random(), Math.random(), Math.random(), 1.0); //no opengl as cores vao de 0 a 1, sendo 1 255 e 0 0. Entao e possivel geral a cor so com o math random
+                    //agora desenharemos a imagem final
+                    context.clear(context.COLOR_BUFFER_BIT);
+                });
+                
+            }
         });
         </script>
 	</head>
 	<body>
 	</body>
-    <canvas height="500" width="600" style="background-color: antiquewhite" id="canvas"></canvas>
+    <canvas height="500" width="600" id="canvas"></canvas>
+    <button id="switch">Mudar de cor</button>
 </html>
